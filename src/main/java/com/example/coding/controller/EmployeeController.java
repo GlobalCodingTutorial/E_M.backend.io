@@ -16,9 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.coding.model.Employee;
 import com.example.coding.service.EmployeeService;
 
-
-@RestController
 @CrossOrigin("http://localhost:5173")
+@RestController
 @RequestMapping("/employees")
 public class EmployeeController {
 	
