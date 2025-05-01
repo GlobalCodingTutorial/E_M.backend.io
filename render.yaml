@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: ems-project
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:mysql://your-db-host:3306/codingtutorial
+      - key: SPRING_DATASOURCE_USERNAME
+        value: root
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: your-password
+      - key: SPRING_JPA_HIBERNATE_DDL_AUTO
+        value: update

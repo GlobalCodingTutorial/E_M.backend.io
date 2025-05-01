@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  app:
+    environment:
+      JAVA_TOOL_OPTIONS: "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005"
+    ports:
+      - "5005:5005"  # Remote debugging port
+    command: >
+      java
+      -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005
+      -jar app.jar
