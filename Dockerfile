@@ -1,4 +1,24 @@
+# Use Eclipse Temurin JDK 24 base image
 FROM eclipse-temurin:24-jdk
+
+# Set working directory
 WORKDIR /app
-COPY target/coding-0.0.1-SNAPSHOT.jar app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+
+# Copy Maven wrapper and pom.xml
+COPY mvnw pom.xml ./
+COPY .mvn .mvn
+
+# Pre-fetch dependencies
+RUN ./mvnw dependency:go-offline
+
+# Copy source files
+COPY src src
+
+# Build the project
+RUN ./mvnw clean package -DskipTests
+
+# Expose the port used by Spring Boot
+EXPOSE 3030
+
+# Run the application
+CMD ["java", "-jar", "target/coding-0.0.1-SNAPSHOT.jar"]
