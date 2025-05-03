@@ -21,4 +21,8 @@ RUN ./mvnw clean package -DskipTests
 EXPOSE 3030
 
 # Run the application
+<<<<<<< HEAD
 CMD ["java", "-jar", "target/coding-0.0.1-SNAPSHOT.jar"]
+=======
+CMD ["java", "-jar", "target/coding-0.0.1-SNAPSHOT.jar"]
+>>>>>>> 4b1b5a8c640f6ec2355fec1132ec7db9f5568a4a

@@ -26,4 +26,8 @@ services:
       - mysql
 
 volumes:
-  mysql_data:
+  db_data:
+
+networks:
+  ems-network:
+    driver: bridge
