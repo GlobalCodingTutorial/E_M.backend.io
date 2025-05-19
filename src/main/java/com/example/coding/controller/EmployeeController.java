@@ -16,7 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.coding.model.Employee;
 import com.example.coding.service.EmployeeService;
 
-@CrossOrigin("https://eeployeems.netlify.app")
+@CrossOrigin(origins = {
+    "http://localhost:5173",
+    "https://management-emp.netlify.app/"
+})
 @RestController
 @RequestMapping("/employees")
 public class EmployeeController {
