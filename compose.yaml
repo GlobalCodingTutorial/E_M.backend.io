@@ -1,15 +1,14 @@
-
 services:
   backend:
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3030:3030"
+      - "${PORT}:3030"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/codingtutorial
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: vgola261@gmail.com
+      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
+      SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
     depends_on:
       - db
 
@@ -17,8 +16,8 @@ services:
     image: mysql:8.0
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: vgola261@gmail.com
-      MYSQL_DATABASE: codingtutorial
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
     ports:
       - "3307:3306"
     volumes:
