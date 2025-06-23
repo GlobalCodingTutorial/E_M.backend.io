@@ -1,11 +1,6 @@
-# Use OpenJDK 17 image
-FROM openjdk:17-jdk-slim
-
-# App directory
-WORKDIR /app
-
-# Copy Maven build jar (adjust this if you rename jar)
-COPY target/coding-0.0.1-SNAPSHOT.jar app.jar
-
-# Run the Spring Boot app
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Dockerfile
+FROM eclipse-temurin:17-jdk-alpine
+VOLUME /tmp
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
