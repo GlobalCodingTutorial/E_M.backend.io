@@ -1,14 +1,11 @@
+# Use OpenJDK 17 image
+FROM openjdk:17-jdk-slim
 
-
-FROM openjdk:17
+# App directory
 WORKDIR /app
-COPY . .
 
-# ✅ Add this line to give execute permission
-RUN chmod +x mvnw
+# Copy Maven build jar (adjust this if you rename jar)
+COPY target/coding-0.0.1-SNAPSHOT.jar app.jar
 
-RUN ./mvnw clean package -DskipTests
-EXPOSE 3030
-CMD ["java", "-jar", "target/coding-0.0.1-SNAPSHOT.jar"]
-
-
+# Run the Spring Boot app
+ENTRYPOINT ["java", "-jar", "app.jar"]
