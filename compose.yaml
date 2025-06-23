@@ -1,12 +1,12 @@
-version: '3.8'
-
+version: "3.8"
 services:
-  backend:
+  springboot-app:
     build: .
+    container_name: ems_app
     ports:
       - "3030:3030"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://sql201.epizy.com:3306/if0_39124396_codingtutorial
+      SPRING_DATASOURCE_URL: jdbc:mysql://sql112.infinityfree.com:3306/if0_39124396_mysql_db
       SPRING_DATASOURCE_USERNAME: if0_39124396
-      SPRING_DATASOURCE_PASSWORD: vikasgola@07
+      SPRING_DATASOURCE_PASSWORD: vikasgola007
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
