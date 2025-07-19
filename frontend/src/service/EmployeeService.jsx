@@ -1,5 +1,5 @@
 import axios from "axios";
-const EMPLOYEE_S_APIBASE_URL = "http://localhost:3030/employees";
+const EMPLOYEE_S_APIBASE_URL = "http://localhost:8080/employees";
 class EmployeeService {
   saveEmployee(employee) {
     return axios.post(EMPLOYEE_S_APIBASE_URL, employee);
