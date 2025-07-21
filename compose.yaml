@@ -28,9 +28,9 @@ services:
     ports:
       - "8080:8080"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/postgres
-      SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_DATASOURCE_URL: jdbc:postgresql://dpg-d1v1tq2dbo4c73f3ak40-a.postgresql.render.com:5432/ems_db_9g12
+      SPRING_DATASOURCE_USERNAME: ems_db_9g12_user
+      SPRING_DATASOURCE_PASSWORD: j9E24QFBCcbKcg155VqOVtDmgjn1L3iA
       SPRING_JPA_HIBERNATE_DDL_AUTO: update # Or validate, none for production
     depends_on:
       db:
