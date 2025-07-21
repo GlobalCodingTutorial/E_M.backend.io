@@ -60,3 +60,9 @@ pom.xml.tag
 pom.xml.versionsBackup
 release.properties
 replay_pid*
+target
+.git
+.gitignore
+README.md
+docker-compose.yaml
+Dockerfile
