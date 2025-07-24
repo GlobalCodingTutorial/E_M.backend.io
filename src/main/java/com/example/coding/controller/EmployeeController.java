@@ -17,16 +17,15 @@ import com.example.coding.model.Employee;
 import com.example.coding.service.EmployeeService;
 
 @CrossOrigin(origins = {
-    "http://localhost:5173",
-    "https://management-emp.netlify.app/"
+		"http://localhost:5173", "https://e-m-frontenf-io.vercel.app"
 })
 @RestController
 @RequestMapping("/employees")
 public class EmployeeController {
-	
+
 	@Autowired
 	private final EmployeeService service;
-	
+
 	public EmployeeController(EmployeeService service) {
 		this.service = service;
 	}
@@ -35,51 +34,24 @@ public class EmployeeController {
 	public Employee create(@RequestBody Employee employee) {
 		return service.saveEmployee(employee);
 	}
-	
+
 	@GetMapping
-	public List<Employee> getAll(){
+	public List<Employee> getAll() {
 		return service.getAllEmployees();
 	}
-	
+
 	@GetMapping("/{id}")
 	public Employee getById(@PathVariable Long id) {
 		return service.getEmployeeById(id);
 	}
-	
+
 	@PutMapping("/{id}")
-	public Employee updateEmployee(@PathVariable Long id ,@RequestBody Employee employee) {
+	public Employee updateEmployee(@PathVariable Long id, @RequestBody Employee employee) {
 		return service.updateEmployee(id, employee);
 	}
-	
+
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable Long id) {
 		service.deleteEmployee(id);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
