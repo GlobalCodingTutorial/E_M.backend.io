@@ -17,7 +17,7 @@ import com.example.coding.model.Employee;
 import com.example.coding.service.EmployeeService;
 
 @CrossOrigin(origins = {
-		"http://localhost:5173", "https://employeemanagement-hub.netlify.app/"
+		"http://localhost:5173", "https://e-m-frontenf-io.vercel.app"
 })
 @RestController
 @RequestMapping("/employees")
